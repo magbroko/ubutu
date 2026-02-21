@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Packages & Pricing | Thegracebaker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .order-hero {
+            background: linear-gradient(135deg, rgba(75, 54, 33, 0.92), rgba(139, 90, 43, 0.88)),
+                url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=2000&q=80') center/cover;
+            padding: 160px 0 100px;
+            color: white;
+            text-align: center;
+        }
+        .order-hero h1 { font-size: 2.75rem; margin-bottom: 0.5rem; }
+        .order-hero p { opacity: 0.95; font-size: 1.1rem; }
+        .packages-section { padding: 4rem 0 6rem; }
+        .package-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(75, 54, 33, 0.08);
+            border: 1px solid rgba(75, 54, 33, 0.06);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(75, 54, 33, 0.15);
+        }
+        .package-card .package-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        .package-card .package-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .package-card .package-title { font-size: 1.25rem; color: var(--coffee-brown); margin-bottom: 0.35rem; }
+        .package-card .package-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; flex: 1; }
+        .package-card .package-price { font-size: 1.5rem; font-weight: 700; color: var(--cider-brown); margin-bottom: 1rem; }
+        .package-card .package-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+        .package-card .qty-input {
+            width: 70px;
+            padding: 0.5rem;
+            border: 1.5px solid rgba(75, 54, 33, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .package-card .btn-add {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.65rem 1rem;
+            background: linear-gradient(135deg, var(--coffee-brown), var(--cider-brown));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .package-card .btn-add:hover { color: white; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(75, 54, 33, 0.35); }
+        .cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--coffee-brown);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+        }
+        .cart-bar.show { display: block; }
+        .cart-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .cart-bar .cart-count { font-weight: 600; font-size: 1.1rem; }
+        .cart-bar .btn-checkout {
+            padding: 0.75rem 1.75rem;
+            background: var(--light-brown);
+            color: var(--coffee-brown);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .cart-bar .btn-checkout:hover { color: var(--coffee-brown); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-logo"><i class="bi bi-cake2-fill"></i></span>
+                <span class="brand-name">Thegracebaker</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order-now.html">Order Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="order-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h1 class="display-4">Order Now</h1>
+                    <p class="lead">Choose from our packages below and proceed to checkout. We deliver with care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Packages</span>
+                <h2 class="section-title">Packages & Pricing</h2>
+                <p class="section-subtitle">Select items and quantities, then proceed to checkout to complete your order.</p>
+            </div>
+            <div class="row g-4" id="packagesGrid">
+                <!-- Packages injected by JS or static below -->
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-bar" id="cartBar">
+        <div class="container">
+            <span class="cart-count" id="cartCount">0 items · $0.00</span>
+            <a href="checkout.html" class="btn-checkout" id="btnCheckout">Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 80 });
+    </script>
+    <script src="order.js"></script>
+    <script>
+        (function() {
+            var packages = [
+                { id: 'birthday-6', name: 'Birthday Cake (6")', desc: 'Single-tier cake, serves 8–10. Custom message included.', price: 45, image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80', category: 'Cakes' },
+                { id: 'birthday-8', name: 'Birthday Cake (8")', desc: 'Single-tier cake, serves 15–20. Custom design available.', price: 65, image: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=600&q=80', category: 'Cakes' },
+                { id: 'wedding-2', name: 'Wedding Cake (2-tier)', desc: 'Elegant two-tier wedding cake. Consultation included.', price: 250, image: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80', category: 'Cakes' },
+                { id: 'wedding-3', name: 'Wedding Cake (3-tier)', desc: 'Stunning three-tier design. Tasting session included.', price: 380, image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=80', category: 'Cakes' },
+                { id: 'snack-small', name: 'Snack Pack (Small)', desc: 'Assorted pastries and snacks for 6–8 guests.', price: 35, image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80', category: 'Snacks' },
+                { id: 'snack-medium', name: 'Snack Pack (Medium)', desc: 'Premium assortment for 12–15 guests.', price: 55, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80', category: 'Snacks' },
+                { id: 'snack-large', name: 'Snack Pack (Large)', desc: 'Full platter for 25–30 guests.', price: 95, image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&q=80', category: 'Snacks' },
+                { id: 'gift-standard', name: 'Gift Box (Standard)', desc: 'Curated treats in elegant packaging. Perfect gift.', price: 40, image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80', category: 'Gifts' },
+                { id: 'gift-premium', name: 'Gift Box (Premium)', desc: 'Premium selection with luxury packaging.', price: 75, image: 'https://images.unsplash.com/photo-1513542789411-b6d5d05985c9?w=600&q=80', category: 'Gifts' },
+                { id: 'platter-small', name: 'Party Platter (Small)', desc: 'Savory & sweet mix for 10–12 people.', price: 60, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80', category: 'Platters' },
+                { id: 'platter-large', name: 'Party Platter (Large)', desc: 'Full spread for 25–30 people.', price: 120, image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80', category: 'Platters' },
+                { id: 'drinks-6', name: 'Fruit Drinks (6 bottles)', desc: 'Assorted fresh fruit drinks. Chilled delivery.', price: 25, image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80', category: 'Drinks' },
+                { id: 'drinks-12', name: 'Fruit Drinks (12 bottles)', desc: 'Perfect for events. Mix of flavors.', price: 45, image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80', category: 'Drinks' },
+                { id: 'combo-cake-snack', name: 'Combo: Cake + Snacks (Small)', desc: '6" cake plus small snack pack. Great for small parties.', price: 95, image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80', category: 'Combos' },
+                { id: 'combo-full', name: 'Combo: Full Party Pack', desc: 'Cake, snacks, platter & drinks for 20–25 guests.', price: 280, image: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&q=80', category: 'Combos' }
+            ];
+            var grid = document.getElementById('packagesGrid');
+            if (grid && typeof OrderNow !== 'undefined') {
+                OrderNow.renderPackages(grid, packages);
+            }
+        })();
+        setTimeout(function() { if (typeof OrderNow !== 'undefined') OrderNow.initOrderPage(); }, 100);
+    </script>
+</body>
+</html>

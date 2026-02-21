@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cakes - Thegracebaker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, rgba(75, 54, 33, 0.9), rgba(139, 90, 43, 0.8)),
+                        url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=2000&q=80') center/cover;
+            padding: 150px 0 100px;
+            color: white;
+            text-align: center;
+        }
+        .service-details { padding: 80px 0; }
+        .feature-box { padding: 2rem; background: var(--cream); border-radius: 15px; margin-bottom: 2rem; }
+        .cake-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
+        .cake-item { height: 250px; border-radius: 15px; background-size: cover; background-position: center; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-logo"><i class="bi bi-cake2-fill"></i></span>
+                <span class="brand-name">Thegracebaker</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h1 class="display-3 mb-4">Exquisite Custom Cakes</h1>
+                    <p class="lead">Beautiful cakes for every special occasion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="mb-5" data-aos="fade-up">
+                        <h2 class="section-title mb-4">Custom Cake Designs</h2>
+                        <p class="lead">We create stunning, delicious cakes for weddings, birthdays, corporate events, and all your special moments.</p>
+                        <p>Each cake is a masterpiece, crafted with premium ingredients and artistic attention to detail. From elegant wedding cakes to fun birthday designs, we bring your vision to life.</p>
+                    </div>
+
+                    <div class="cake-gallery">
+                        <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=500&q=80');" data-aos="fade-up"></div>
+                        <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80');" data-aos="fade-up" data-aos-delay="100"></div>
+                        <div class="cake-item" style="background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&q=80');" data-aos="fade-up" data-aos-delay="200"></div>
+                    </div>
+
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="feature-box">
+                                <div class="service-icon mb-3"><i class="bi bi-heart-fill"></i></div>
+                                <h4>Wedding Cakes</h4>
+                                <p>Elegant multi-tier designs that make your special day unforgettable.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-box">
+                                <div class="service-icon mb-3"><i class="bi bi-balloon-fill"></i></div>
+                                <h4>Birthday Cakes</h4>
+                                <p>Custom themed designs for all ages, from kids to adults.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-box">
+                                <div class="service-icon mb-3"><i class="bi bi-briefcase-fill"></i></div>
+                                <h4>Corporate Events</h4>
+                                <p>Professional cakes for business events and celebrations.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-box">
+                                <div class="service-icon mb-3"><i class="bi bi-flower1"></i></div>
+                                <h4>Special Occasions</h4>
+                                <p>Anniversaries, graduations, and any celebration you can imagine.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5" data-aos="fade-up">
+                        <h3 class="mb-4">Available Flavors</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Vanilla</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Chocolate</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Red Velvet</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Strawberry</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Lemon</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Carrot</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Marble</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom Flavors</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up">
+                        <a href="../index.html#contact" class="btn btn-primary btn-lg" data-intent="order" data-service="Cakes">
+                            <i class="bi bi-cart-plus me-2"></i>Order Your Cake
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row py-4">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2024 Thegracebaker. All rights reserved.</p>
+                    <p class="mt-2"><a href="../index.html" class="text-white">Back to Home</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
+
